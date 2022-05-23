@@ -13,9 +13,11 @@ input_file = "prepetm.inp"
 ph_dat = "ph.dat"
 alk_file = "alk.dat"
 dic_file = "dic.dat"
+
+# 稳态final_co2允许误差
 diff_co2 = 1.0
 
-# 第一步：求稳态
+# 第一步：求稳态相关需要修改的变量
 modkv = {
     "SVSTART": "",
     "TFINAL": 200e7,
@@ -342,6 +344,8 @@ def run_cmd(cmd):
 
 
 if __name__ == "__main__":
+    r = os.popen("cp prepetm.inp prepetm.inp.2")
+    _ = r.read()
     # 公式法求对应的final ph的值
     end_ph_list = [
         calc_final_ph(round(start_ph_list[i], 4))
