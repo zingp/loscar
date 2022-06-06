@@ -112,7 +112,7 @@ def calc_final_ph(pHp):
     pKB2 = 8.461
     m = (1 + 10**(pKB1 - pHp)) / (1 + alpha1 * 10**(pKB1 - pHp))
     b = (-d11Bp - 10**(pKB1 - pHp) *
-         (epsilon1 + alpha1 * d11Bp)) / (1 + 10**(pKB1 - pHp))
+         (epsilon1 + alpha1 * d11Bp)) / (1 + alpha1 * 10**(pKB1 - pHp))
     pHe = pKB2 - math.log10(-(d11Bsw - d11Be - (m * d11Bsw + b)) /
                             (d11Bsw - alpha2 *
                              (d11Be + m * d11Bsw + b) - epsilon2))

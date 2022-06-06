@@ -104,8 +104,6 @@ def read_out(filename):
     dic_z=3.272378669010403, alk_a=2.620073182065822, alk_z=3.248060678286949,
     finc=24832525578320.312, cinp=13696.2890625
     """
-    names = ["ini_co2", "ini_ph", "final_co2", "final_ph",
-             "phdat_final_ph", "dic_a", "dic_z", "alk_a", "alk_z", "finc", "cinp"]
     dataset = []
     with open(filename, "r") as f:
         for line in f:
